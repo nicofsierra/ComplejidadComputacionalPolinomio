@@ -85,18 +85,14 @@ public class Polinomio {
 	public double evaluarMejorada(double x) { 
 		double resultado = 0;
 		
-		double[] dp = new double[grado+1];
-		
-		dp[0] = 1;
-	
-		for(int i=0;i<dp.length-1;i++) {
+		double potencia = 1;
+
+		for(int i=0;i<=grado;i++) {
 			
-			resultado += dp[i]*coeficientes[grado-i];
-			
-			dp[i+1] = dp[i]*x;
+			resultado += potencia*coeficientes[grado-i];
+
+			potencia *= x;
 		}
-		
-		resultado += dp[grado]*coeficientes[0];
 		
 		return resultado;
 		//Complejidad = O(grado)
