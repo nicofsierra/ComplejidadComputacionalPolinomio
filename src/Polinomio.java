@@ -23,20 +23,7 @@ public class Polinomio {
 		}
 		
 		return resultado;
-		/*
-		 * Complejidad:
-		 * analizamos el for interno:
-		 * 1° iteracion: j desde 0 a grado-1 -> "grado" iteraciones
-		 * 2° iteracion: j desde 0 a grado -2 -> "grado - 1" iteraciones
-		 * 3° iteracion: j desde 0 a grado-3 -> "grado -2" iteraciones
-		 * ...
-		 * esto parara cuando haga 1 sola iteracion. 
-		 * la cantidad de iteraciones sera:
-		 * 1 + 2 + 3 + ... + (grado-1) + grado = grado*(grado+1)/2 iteraciones.
-		 * dentro de los ciclos for, se hacen operaciones de complejidad
-		 * O(1) (sumas y multiplicaciones)
-		 * por lo tanto este algoritmo tiene complejidad O(grado*grado)
-		 */
+		//Complejidad = O(grado*grado)
 	}
 	
 	double evaluarRecursiva(double x) {
@@ -58,7 +45,7 @@ public class Polinomio {
 		}
 		
 		return resultado;
-		//Complejidad = O(grado*log(grado)), creo, analizar
+		//Complejidad = O(grado*log(grado))
 	}
 	
 	public double evaluarProgDinamica(double x) { //este podria ser el de mejorada tambien ojo!!!
@@ -79,7 +66,6 @@ public class Polinomio {
 		return resultado;
 		
 		//complejidad = O(grado)
-		//NOTA: Capaz habria que hacerlo mas parecido al de fibonacci, eso lo veremos
 	}
 	
 	public double evaluarMejorada(double x) { 
@@ -106,8 +92,7 @@ public class Polinomio {
 		}		
 		
 		return resultado;
-		//aparentemente Math.pow es O(1) ya que evalua con algunos terminos de la serie
-		// de taylor de Exp(x) , por lo tanto -> 
+		//Math.pow() es O(1) por lo cual:
 		// Complejidad = O(grado)
 	}
 	
@@ -119,10 +104,10 @@ public class Polinomio {
 		}
 		
 		return resultado;
-		//Complejidad = O(grado) pero con O(1) en memoria, es el mas optimo
+		//Complejidad = O(grado)
 	}
 	
-/////////////////////////Funciones de ayuda//////////////////////////////////////////
+/////////////////////////Funciones Auxiliares//////////////////////////////////////////
 	private double potencia(double x, int n) {
 		// TODO Auto-generated method stub
 		if(n == 0) {
